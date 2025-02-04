@@ -1,0 +1,15 @@
+{
+    "name": "devsrealm/tonics-template-system",
+    "description": "A Simple and Fast Template System For Tonics Web Projects",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Devsrealm\\TonicsTemplateSystem\\": "src/"
+        }
+    },
+    "require": {
+      "ext-mbstring": "*"
+    },
+    "prefer-stable": true
+}
