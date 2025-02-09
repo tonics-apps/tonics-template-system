@@ -938,17 +938,18 @@ class TonicsView
     {
         $restart = false;
         $this->templateName = $name;
-        if ($this->templateCache !== null){
+        if ($this->templateCache !== null) {
             $cacheKey = $this->getTemplateFriendlyName();
-            $cacheModeStorageKey = $this->getTemplateFriendlyName().'__modeStorage';
-            if ($this->getTemplateCache()->exists($cacheKey) === false){
-                $restart = true;
-            } else {
-                $contents = $this->getTemplateCache()->get($cacheKey);
+            $cacheModeStorageKey = $this->getTemplateFriendlyName() . '__modeStorage';
+            $cacheExists = $this->getTemplateCache()->exists($cacheKey);
+            $contents = $cacheExists ? $this->getTemplateCache()->get($cacheKey) : null;
+            if ($cacheExists && $contents instanceof \Devsrealm\TonicsTemplateSystem\Content) {
                 $this->setContent($contents);
                 $cacheStorage = $this->getTemplateCache()->get($cacheModeStorageKey);
-                $cacheStorage = (is_array($cacheStorage)) ? $cacheStorage : [];
+                $cacheStorage = is_array($cacheStorage) ? $cacheStorage : [];
                 $this->setModeStorages($cacheStorage);
+            } else {
+                $restart = true;
             }
         } else {
             $restart = true;
