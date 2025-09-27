@@ -113,10 +113,16 @@ class TonicsTemplateFileLoader implements TonicsTemplateLoaderInterface
     }
 
     /**
-     * Loads all template recursively in a given directory
+     * Loads all template recursively in a given directory.
+     *
+     * You can optionally provide a namespace for the templates in the directory.
+     * If no namespace is provided, the directory name will be used as the namespace.
+     * @param string $dir
+     * @param string|null $nameSpace
+     * @return void
      * @throws TonicsTemplateLoaderError
      */
-    public function resolveTemplateFiles(string $dir)
+    public function resolveTemplateFiles(string $dir, string $nameSpace = null): void
     {
         if (file_exists($dir) === false){
             throw new TonicsTemplateLoaderError("`$dir` Is Not a Valid Directory");
@@ -150,8 +156,9 @@ class TonicsTemplateFileLoader implements TonicsTemplateLoaderInterface
                     throw new TonicsTemplateLoaderError("`$path` Is Not Readable or Writable");
                 }
                 $fileKey = str_replace($dir . DIRECTORY_SEPARATOR, '', $file->getRealPath());
-                $nameSpace = basename($dir) . '::';
-                $this->templates[$nameSpace . $fileKey] = $path;
+                $resolvedNameSpace = ($nameSpace !== null && trim($nameSpace) !== '') ? $nameSpace : basename($dir);
+                $finalNameSpace = $resolvedNameSpace . '::';
+                $this->templates[$finalNameSpace . $fileKey] = $path;
             }
         }
     }

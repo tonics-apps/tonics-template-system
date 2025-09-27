@@ -17,7 +17,7 @@ class CharacterModeHandler extends TonicsTemplateViewAbstract implements TonicsM
         return true;
     }
 
-    public function stickToContent(OnTagToken $tagToken)
+    public function stickToContent(OnTagToken $tagToken): void
     {
         $view = $this->getTonicsView();
         if (!empty($tagToken->getContent())){
