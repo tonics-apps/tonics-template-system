@@ -2,6 +2,72 @@
 
 A fast, extensible tokenizer-based template engine for PHP. Unlike traditional regex-based template engines, Tonics uses a state machine tokenizer that parses templates character by character, providing better performance and flexibility.
 
+## Table of Contents
+
+### 📖 Quick Navigation
+
+| Section | Description | Jump Link |
+|---------|-------------|-----------|
+| **Getting Started** | Installation and basic setup | [→](#installation) |
+| **Core Concepts** | Template syntax and features | [→](#template-syntax) |
+| **Real-World Examples** | Complete usage scenarios | [→](#complete-usage-scenarios) |
+| **Advanced Topics** | Hooks, caching, and custom handlers | [→](#advanced-topics) |
+| **Troubleshooting** | Common issues and solutions | [→](#troubleshooting) |
+
+### 🚀 Quick Jump to Scenarios
+
+Skip the basics and dive straight into real-world examples:
+
+| Scenario | Description | Jump Link |
+|----------|-------------|-----------|
+| **🎨 Theme System** | Plugin-ready theme with dynamic content injection | [Jump →](#scenario-1-building-a-theme-system-with-hooks) |
+| **🔍 SEO Management** | Dynamic meta tags, Open Graph, Schema.org | [Jump →](#scenario-2-dynamic-seo-management) |
+| **🛒 E-commerce** | Product listings with loops and conditionals | [Jump →](#scenario-3-e-commerce-product-listing-with-loops) |
+| **🌍 Multi-Language** | Internationalization and locale switching | [Jump →](#scenario-4-multi-language-template-system) |
+| **📊 Dashboard** | Complex nested data with functions | [Jump →](#scenario-5-dashboard-with-nested-loops-and-functions) |
+
+### 📚 Full Documentation Index
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+  - [With Extension Bundle](#with-extension-bundle-recommended)
+  - [Core Only](#core-only)
+- [Documentation](#documentation)
+  - [Basic Setup](#basic-setup)
+  - [Basic Rendering](#basic-rendering)
+  - [Template Loaders](#template-loaders)
+  - [Template Namespaces](#template-namespaces)
+  - [Template Syntax](#template-syntax)
+    - [Variables](#variables)
+    - [Blocks](#blocks)
+    - [Template Inheritance](#template-inheritance)
+    - [Imports](#imports)
+    - [Functions](#functions)
+    - [Raw Content](#raw-content)
+    - [Comments](#comments)
+  - [Extension Bundle Features](#extension-bundle-features)
+  - [Caching](#caching)
+  - [Custom Mode Handlers](#custom-mode-handlers)
+  - [Render Modes](#render-modes)
+  - [Best Practices](#best-practices)
+  - [Example: Complete Application Setup](#example-complete-application-setup)
+- [Helper Functions](#helper-functions)
+- [Advanced Topics](#advanced-topics)
+- [Complete Usage Scenarios](#complete-usage-scenarios)
+  - [Scenario 1: Building a Theme System with Hooks](#scenario-1-building-a-theme-system-with-hooks)
+  - [Scenario 2: Dynamic SEO Management](#scenario-2-dynamic-seo-management)
+  - [Scenario 3: E-commerce Product Listing with Loops](#scenario-3-e-commerce-product-listing-with-loops)
+  - [Scenario 4: Multi-Language Template System](#scenario-4-multi-language-template-system)
+  - [Scenario 5: Dashboard with Nested Loops and Functions](#scenario-5-dashboard-with-nested-loops-and-functions)
+- [Hook System Deep Dive](#hook-system-deep-dive)
+- [Troubleshooting](#troubleshooting)
+- [Performance Tips](#performance-tips)
+- [License](#license)
+- [Contributing](#contributing)
+
+---
+
 ## Features
 
 * **Tokenizer-Based Parsing** - Uses a state machine instead of regex for better performance
