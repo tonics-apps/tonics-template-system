@@ -74,7 +74,7 @@ Skip the basics and dive straight into real-world examples:
 * **Square Bracket Syntax** - Clean `[[tag]]` syntax for template markup
 * **Template Inheritance** - Support for template blocks, imports, and inheritance
 * **Extensible Architecture** - Easy to create custom tokenizers and renderers
-* **Built-in Caching** - Optional caching support (Memcached)
+* **Built-in Caching** - Optional caching support (Memcached, APCU, File)
 * **Context-Free Modes** - Flexible mode system for different template behaviors
 * **Extension Bundle Available** - Loops, conditionals, hooks, and string functions
 
