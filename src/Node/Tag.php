@@ -127,7 +127,7 @@ class Tag
      * otherwise, it would be pushed to the bottom of the stack
      * @return $this
      */
-    public function addNode(Tag $node, int $position = null): static
+    public function addNode(Tag $node, ?int $position = null): static
     {
         if ($position !== null){
             $array = $this->nodes;

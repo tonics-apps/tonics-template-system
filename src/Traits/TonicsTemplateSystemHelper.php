@@ -55,7 +55,7 @@ trait TonicsTemplateSystemHelper
      *
      * @return mixed
      */
-    public function expandArgs(array $args = [], callable $customMode = null): mixed
+    public function expandArgs(array $args = [], ?callable $customMode = null): mixed
     {
         foreach ($args as $k => $arg){
             if (isset($arg['mode'])){

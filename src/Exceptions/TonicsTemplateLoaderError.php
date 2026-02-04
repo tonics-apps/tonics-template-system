@@ -8,7 +8,7 @@ use Throwable;
 
 class TonicsTemplateLoaderError extends Exception
 {
-    #[Pure] public function __construct($message = null, $code = 0, Throwable $previous = null)
+    #[Pure] public function __construct($message = null, $code = 0, ?Throwable $previous = null)
     {
        parent::__construct($message, $code, $previous);
     }

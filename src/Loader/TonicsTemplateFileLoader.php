@@ -122,7 +122,7 @@ class TonicsTemplateFileLoader implements TonicsTemplateLoaderInterface
      * @return void
      * @throws TonicsTemplateLoaderError
      */
-    public function resolveTemplateFiles(string $dir, string $nameSpace = null): void
+    public function resolveTemplateFiles(string $dir, ?string $nameSpace = null): void
     {
         if (file_exists($dir) === false){
             throw new TonicsTemplateLoaderError("`$dir` Is Not a Valid Directory");

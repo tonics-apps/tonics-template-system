@@ -51,7 +51,7 @@ class OnTagToken
      *
      * @return Generator|array
      */
-    public function getChildren(bool $recursive = false, callable $onBeforeCallToChildrenRecursive = null): Generator|array
+    public function getChildren(bool $recursive = false, ?callable $onBeforeCallToChildrenRecursive = null): Generator|array
     {
         if ($recursive){
             $result = true;

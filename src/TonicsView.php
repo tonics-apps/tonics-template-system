@@ -1127,7 +1127,7 @@ class TonicsView
      * Handle the error if an issue is raised moving the pointer forward
      * @return int
      */
-    public function nextCharacterKey(callable $handleError = null): int
+    public function nextCharacterKey(?callable $handleError = null): int
     {
         $key = $this->currentCharKey + 1;
         if (!key_exists($key, $this->characters)) {
@@ -1147,7 +1147,7 @@ class TonicsView
      * @param callable|null $callable
      * @return bool|callable
      */
-    public function isNextChar(string $char = '', callable $callable = null): bool|callable
+    public function isNextChar(string $char = '', ?callable $callable = null): bool|callable
     {
 
         $nextChar = $this->characters[$this->nextCharacterKey()];
@@ -1166,7 +1166,7 @@ class TonicsView
      * Handle the error if an issue is raised getting hypothetical next char
      * @return mixed
      */
-    public function nextCharHypothetical(callable $handleError = null): mixed
+    public function nextCharHypothetical(?callable $handleError = null): mixed
     {
         $nextChar = $this->characters[$this->nextCharacterKey($handleError)];
         # Rewind back to its prev position as we are only checking next char
@@ -1353,7 +1353,7 @@ class TonicsView
      * Would be used as the mode if set
      * @return TonicsTemplateViewAbstract
      */
-    public function getModeRendererHandler(string $key, TonicsTemplateViewAbstract $optionalModeHandler = null): TonicsTemplateViewAbstract
+    public function getModeRendererHandler(string $key, ?TonicsTemplateViewAbstract $optionalModeHandler = null): TonicsTemplateViewAbstract
     {
         $key = strtolower($key);
         if (!key_exists($key, $this->modeHandler)) {
@@ -1454,7 +1454,7 @@ class TonicsView
                 $variableDataRef = &$variableDataRef->{$k};
             } else {
                 // Handle unsupported data type (neither array nor object)
-                throw new Exception('Unsupported data type encountered.');
+                throw new \Exception('Unsupported data type encountered.');
             }
         }
 
@@ -1718,7 +1718,7 @@ class TonicsView
      * @param int|null $to
      * @return array
      */
-    public function queryStateLifeCycleLine(int $from, int $to = null): array
+    public function queryStateLifeCycleLine(int $from, ?int $to = null): array
     {
         $stateLifeCycle = [];
         foreach ($this->stateLifeCycle as $key => $stCycle) {

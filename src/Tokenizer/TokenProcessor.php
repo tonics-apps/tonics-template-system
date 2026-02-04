@@ -179,7 +179,7 @@ trait TokenProcessor
         $this->lastCreateTag = null;
     }
 
-    public function setCurrentCharacterToken(string $data = null): static
+    public function setCurrentCharacterToken(?string $data = null): static
     {
         $this->characterToken['data'] = $data;
         return $this;
@@ -211,7 +211,7 @@ trait TokenProcessor
      * @param callable|null $handleEmission
      * You get the token user wanna emit e.g Token::Tag or Token::Character
      */
-    public function emit(string $toEmit, bool $emitCurrentTagToken = true, callable $handleEmission = null)
+    public function emit(string $toEmit, bool $emitCurrentTagToken = true, ?callable $handleEmission = null)
     {
         if ($handleEmission !== null) {
             $handleEmission();
